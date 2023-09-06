@@ -8,7 +8,7 @@ def checkout(branch, credentials, poll, url) {
 
     checkout([$class: 'GitSCM',
         branches: [[name: branch]],
-        userRemoteConfigs: [[url: url, credentialsId: credentialsId]],
+        userRemoteConfigs: [[url: url, credentialsId: credentials]],
         extensions: [[$class: 'CleanBeforeCheckout'], 
                     [$class: 'DisableChangelog'],
                     [$class: 'DisableRemotePoll']]
