@@ -5,4 +5,12 @@ def checkout(branch, credentials, poll, url) {
             echo "test"
         // }
     // }
+
+    checkout([$class: 'GitSCM',
+        branches: [[name: branch]],
+        userRemoteConfigs: [[url: url, credentialsId: credentialsId]],
+        extensions: [[$class: 'CleanBeforeCheckout'], 
+                    [$class: 'DisableChangelog'],
+                    [$class: 'DisableRemotePoll']]
+    ])
 }
