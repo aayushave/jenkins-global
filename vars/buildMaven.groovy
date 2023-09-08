@@ -6,6 +6,8 @@ def buildJarFromDirectory(sourceDir) {
                         // sh " chmod +x -R ${sourceDir}"
                         // sh "./mvnw clean install"
                         sh "pwd"
+                        sh "export M2_HOME=/opt/maven"
+                        sh "export PATH=$PATH:$M2_HOME/bin"
                         sh "mvn clean install -DSkipTests"
             }
         }
