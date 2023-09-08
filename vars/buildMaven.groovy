@@ -6,6 +6,6 @@ def buildJarFromDirectory(sourceDir) {
                         // sh " chmod +x -R ${sourceDir}"
                         // sh "./mvnw clean install"
                         sh "pwd"
-                        // sh "mvn clean install -DSkipTests"
+                        sh "mvn clean install -DSkipTests"
             }
         }
