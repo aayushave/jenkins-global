@@ -8,6 +8,6 @@ def buildJarFromDirectory(sourceDir) {
                         sh "pwd"
                         // sh "export M2_HOME=/opt/maven"
                         // sh "export PATH=$PATH:$M2_HOME/bin"
-                        sh "mvn clean install -DSkipTests"
+                        sh "mvn clean install -DskipTests"
             }
         }
