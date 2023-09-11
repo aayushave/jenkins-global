@@ -1,4 +1,4 @@
-def CheckDependency(sourceDir){
+def checkDependency(sourceDir){
     dir(sourceDir) {
       dependencyCheck additionalArguments: ''' 
         -o ${sourceDir}
