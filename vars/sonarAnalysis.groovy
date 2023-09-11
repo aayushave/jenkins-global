@@ -1,7 +1,7 @@
 def sonarWinAnalysis(sourceDir,sonarUrl,sonarToken,sonarProjectKey,sonarProjectName,dbUrl,dbUsername,dbPassword){
   // withEnv(["PATH+SONAR_SCANNER=${scannerHome}/bin"]) {
   dir(sourceDir) {
-    bat """mvn sonar:sonar \
+    bat """mvn clean verify sonar:sonar \
            -Dsonar.host.url=${sonarUrl} \
            -Dsonar.projectKey=${sonarProjectKey} \
            -Dsonar.projectName=${sonarProjectName} \
