@@ -1,8 +1,8 @@
 def checkDependency(sourceDir){
     // dir(sourceDir) {
     def windowsSourceDir = sourceDir.replaceAll('/', '\\')
-        
-    bat "mkdir -p ${windowsSourceDir}"
+    bat "echo ${windowsSourceDir}"    
+    bat "mkdir ${windowsSourceDir}"
     dependencyCheck additionalArguments: ''' 
     -o ${sourceDir}
     -s ${sourceDir}
