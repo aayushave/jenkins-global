@@ -1,5 +1,5 @@
 def checkDependency(sourceDir){
-    dir(sourceDir) {
+    // dir(sourceDir) {
       dependencyCheck additionalArguments: ''' 
         -o ${sourceDir}
         -s ${sourceDir}
@@ -7,6 +7,6 @@ def checkDependency(sourceDir){
         --prettyPrint''', odcInstallation: 'OWASP-Dependency-Check'
               
       dependencyCheckPublisher pattern: 'dependency-check-report.xml unstableTotalAllCritical:5'
-    }
+    // }
 }
   
