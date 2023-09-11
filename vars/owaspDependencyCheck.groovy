@@ -5,8 +5,8 @@ def checkDependency(sourceDir){
     bat "echo ${sourceDir}"
     bat "mkdir ${windowsSourceDir}"
     dependencyCheck additionalArguments: ''' 
-    -o './N-Data'
-    -s './N-Data'
+    -o '${sourceDir}'
+    -s '${sourceDir}'
     -f 'ALL' 
     --prettyPrint''', odcInstallation: 'OWASP-Dependency-Check'
 
