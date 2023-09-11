@@ -1,6 +1,6 @@
 def checkDependency(sourceDir){
     // dir(sourceDir) {
-        bat "mkdir ${sourceDir}"
+        bat "mkdir -p ${sourceDir}"
         dependencyCheck additionalArguments: ''' 
         -o ${sourceDir}
         -s ${sourceDir}
