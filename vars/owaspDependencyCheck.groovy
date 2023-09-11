@@ -1,7 +1,8 @@
 def checkDependency(sourceDir){
     // dir(sourceDir) {
     def windowsSourceDir = sourceDir.replaceAll('/', '\\\\')
-    bat "echo ${windowsSourceDir}"    
+    bat "echo ${windowsSourceDir}" 
+    bat "echo ${sourceDir}"
     bat "mkdir ${windowsSourceDir}"
     dependencyCheck additionalArguments: ''' 
     -o ${sourceDir}
@@ -9,7 +10,7 @@ def checkDependency(sourceDir){
     -f 'ALL' 
     --prettyPrint''', odcInstallation: 'OWASP-Dependency-Check'
 
-      dependencyCheckPublisher pattern: 'dependency-check-report.xml, unstableTotalAllCritical:5'
+    dependencyCheckPublisher pattern: 'dependency-check-report.xml', unstableTotalCritical: 5
     // }
 }
   
