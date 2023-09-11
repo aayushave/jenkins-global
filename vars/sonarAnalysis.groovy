@@ -5,8 +5,8 @@ def sonarWinAnalysis(sourceDir,sonarUrl,sonarToken,sonarProjectKey,sonarProjectN
            -Dsonar.host.url=${sonarUrl} \
            -Dsonar.projectKey=${sonarProjectKey} \
            -Dsonar.projectName=${sonarProjectName} \
-           -Dsonar.projectVersion=1.0
-           -Dsonar.token=${sonarToken}
+           -Dsonar.projectVersion=1.0 \
+           -Dsonar.token=${sonarToken} \
            -Dsonar.jdbc.url=${dbUrl} \
            -Dsonar.jdbc.username=${dbUsername} \
            -Dsonar.jdbc.password=${dbPassword}
