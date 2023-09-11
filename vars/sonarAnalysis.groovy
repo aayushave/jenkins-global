@@ -1,4 +1,4 @@
-def sonarAnalysis(sonarUrl,dbUrl,dbUsername,dbPassword){
+def sonarWinAnalysis(sonarUrl,dbUrl,dbUsername,dbPassword){
   withEnv(["PATH+SONAR_SCANNER=${scannerHome}/bin"]) {
                         bat """
                             mvn sonar:sonar \
