@@ -11,7 +11,7 @@ def checkDependency(sourceDir){
     
     dependencyCheck additionalArguments: """ 
         -o "${sourceDir}"
-        -s "${sourceDir}"
+        -s "./"
         -f 'ALL' 
         --prettyPrint""", odcInstallation: 'OWASP-Dependency-Check'
 
