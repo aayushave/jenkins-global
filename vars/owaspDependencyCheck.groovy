@@ -1,8 +1,8 @@
 def checkDependency(sourceDir){
     // dir(sourceDir) {
-    def windowsSourceDir = sourceDir.replaceAll('./', '\\\\')
-    // bat "echo ${windowsSourceDir}" 
-    // bat "echo ${sourceDir}"
+    def windowsSourceDir = sourceDir.replaceAll('/', '\\\\')
+    bat "echo windowsSourceDir ${windowsSourceDir}" 
+    bat "echo sourceDir ${sourceDir}"
     
     def dirExists = bat(script: "if exist ${windowsSourceDir} (exit 0) else (exit 1)", returnStatus: true) == 0
     if (!dirExists) {
@@ -15,7 +15,7 @@ def checkDependency(sourceDir){
         -f 'ALL' 
         --prettyPrint""", odcInstallation: 'OWASP-Dependency-Check'
 
-    dependencyCheckPublisher pattern: "dependency-check-report.xml"
+    dependencyCheckPublisher pattern: "./OWASP-Data/dependency-check-report.xml"
     // , unstableTotalCritical: 5
     // }
 }
