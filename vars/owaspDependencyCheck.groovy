@@ -15,7 +15,7 @@ def checkDependency(sourceDir){
         -f 'ALL' 
         --prettyPrint""", odcInstallation: 'OWASP-Dependency-Check'
 
-    dependencyCheckPublisher pattern: "./OWASP-Data/dependency-check-report.xml"
+    dependencyCheckPublisher pattern: "/OWASP-Data/dependency-check-report.xml"
     // , unstableTotalCritical: 5
     // }
 }
