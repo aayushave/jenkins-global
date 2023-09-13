@@ -11,6 +11,5 @@ def pushImage(credentials,registryUrl,registryPort,imageName,imageTag){
                     // bat "docker tag postgres:2.0 192.168.34.62:8082/postgres:2.0"
                     }
                     bat "docker push ${registryUrl}:${registryPort}/${imageName}:${imageTag}"
-            }
-        }
+  
 }
