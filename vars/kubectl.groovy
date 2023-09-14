@@ -1,11 +1,11 @@
-def apply(sourceDir,fileName=""){
-    dir(sourceDir) {
-      bat "kubectl apply -f ${sourceDir}/${fileName}"
-    }
+def apply(filePath, env="default"){
+    // dir(sourceDir) {
+      bat "kubectl apply -f ${filePath} -n ${env}"
+    // }
   }
 
-def delete (sourceDir,fileName=""){
-      dir(sourceDir) {
-      bat "kubectl delete -f ${sourceDir}/${fileName}"
-    }
+def delete (filePath, env="default"){
+      // dir(sourceDir) {
+      bat "kubectl delete -f ${filePath} -n ${env}"
+    // }
 }
