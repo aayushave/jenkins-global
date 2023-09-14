@@ -1,7 +1,7 @@
 def shScript(scriptName, envType=""){
-  sh "${scriptName}.sh ${envType}"
+  sh "${scriptName} ${envType}"
 }
 
 def batScript(scriptName, envType=""){
-  bat "${scriptName}.sh ${envType}"
+  bat "${scriptName} ${envType}"
 }
