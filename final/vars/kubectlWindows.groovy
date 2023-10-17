@@ -7,7 +7,7 @@
  * @return Status of 'kubectl apply' operation.
  */
 def apply(filePath, env="default"){
-  bat "kubectl apply -f ${filePath} -n ${env}"
+  bat "kubectl apply -f ${filePath} -n ${env} || true"
 }
 
 /**
@@ -19,7 +19,7 @@ def apply(filePath, env="default"){
  * @return Status of 'kubectl delete' operation.
  */
 def deletefromFile (filePath, env="default"){
-  bat "kubectl delete -f ${filePath} -n ${env}"
+  bat "kubectl delete -f ${filePath} -n ${env} || true"
 }
 
 /**
@@ -34,7 +34,7 @@ def deletefromFile (filePath, env="default"){
  * example: $env: dev
  */
 def delete (param, env="default"){
-    bat "kubectl delete ${param} -n ${env}"
+    bat "kubectl delete ${param} -n ${env} || true"
 }
 
 /**
@@ -47,5 +47,5 @@ def delete (param, env="default"){
  * example: $env: dev
  */
 def create (param,  env="default" ){
-    bat "kubectl create ${param} -n ${env}"
+    bat "kubectl create ${param} -n ${env} || true"
 }
