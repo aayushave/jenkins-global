@@ -8,6 +8,7 @@
  */
 def apply(filePath, env="default"){
   bat "kubectl apply -f ${filePath} -n ${env}"
+  bat returnStatus: true
 }
 
 /**
@@ -20,6 +21,7 @@ def apply(filePath, env="default"){
  */
 def deletefromFile (filePath, env="default"){
   bat "kubectl delete -f ${filePath} -n ${env}"
+  bat returnStatus: true
 }
 
 /**
@@ -35,6 +37,7 @@ def deletefromFile (filePath, env="default"){
  */
 def delete (param, env="default"){
     bat "kubectl delete ${param} -n ${env}"
+    bat returnStatus: true
 }
 
 /**
@@ -47,5 +50,6 @@ def delete (param, env="default"){
  * example: $env: dev
  */
 def create (param,  env="default" ){
-    bat "kubectl create ${param} -n ${env} || true"
+    bat "kubectl create ${param} -n ${env}"
+    bat returnStatus: true
 }
