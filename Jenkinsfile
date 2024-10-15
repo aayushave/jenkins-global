@@ -21,7 +21,6 @@ pipeline {
                 // script{
                 //     scm.checkout('main','spring-cred','false','https://github.com/aayushave/spring-cred.git')
                 // }
-                git branch: 'main' , changelog: false, credentialsId: '10be59a9-2ad2-4ddd-a632-e7528231e27d', poll: 'false', url: 'https://harshal.chinchlikar@dev.azure.com/HSTCM-Security/Callisto/_git/Callisto'
                 // git branch: 'main' , changelog: false, credentialsId: 'spring-cred', poll: 'false', url: 'https://github.com/aayushave/spring-cred.git'
             }
                 
